@@ -1,0 +1,35 @@
+
+#searchQuery{
+    color: #03396c;
+}
+#Layer_1   {
+    width: 200px; 
+    height: 200px; 
+    justify-content: center;
+}
+
+
+.col{
+    justify-content: center;
+}
+
+.card {
+    background-color: #b3cde0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Oswald';
+}
+
+.success , .fail {
+    text-transform: uppercase;
+    color: #6497b1;
+    font-family: 'Oswald'
+}
+
+.card-title{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #03396c;
+    text-decoration:underline;
+}

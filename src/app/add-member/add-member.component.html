@@ -1,0 +1,67 @@
+
+    
+        <br><br>
+        <div class="row">
+            <div class="col-md-3"> </div>
+            <div class="">
+                <form action="../../assets/addMember.php?username" method="get">
+                    <div class="col-md-6 d-grid input-group form-group">
+                        
+                            <div class="form-outline" data-mdb-input-init>
+                                <input type="search" id="username" name="username" #searchQuery class="form-control" placeholder="search" />
+                            </div>
+                        
+                        <button type="button" class="btn btn-block" #searchQuery data-mdb-ripple-init (click)="search(searchQuery.value)">
+                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="	#b3cde0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </button>
+                    </div>
+                </form> 
+            </div>
+            <div class="col-md-3"> </div>
+        </div>
+        <br><br>
+        <div class="row" *ngIf="member; else elseBlock">
+            <div class="col-md-3"> </div>
+            <div class="col" >
+                <div class='card mb-3' style='max-width: 540px;'>
+                    <div class='row g-0'>
+                        <h5>you're adding ...</h5>
+                        <div class='col-md-4'>
+                            
+                            <picture>
+                                
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 21H5.6C5.03995 21 4.75992 21 4.54601 20.891C4.35785 20.7951 4.20487 20.6421 4.10899 20.454C4 20.2401 4 19.96 4 19.4V17.6841C4 17.0484 4 16.7306 4.04798 16.4656C4.27087 15.2344 5.23442 14.2708 6.46558 14.048C6.5425 14.034 6.6237 14.0242 6.71575 14.0171C6.94079 14 7.05331 13.9914 7.20361 14.0026C7.35983 14.0142 7.4472 14.0297 7.59797 14.0722C7.74302 14.1131 8.00429 14.2315 8.52682 14.4682C9.28093 14.8098 10.1183 15 11 15C11.8817 15 12.7191 14.8098 13.4732 14.4682C13.9957 14.2315 14.2569 14.1131 14.4019 14.0722C14.5527 14.0297 14.6399 14.0143 14.7961 14.0026H15M20 18L14 18M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#03396c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                              
+                                <img [src]="member.IAMGE" src="" class='img-fluid rounded-start'  >
+                              </picture>
+                              
+                        </div>
+                        <div class='col-md-8'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>{{member.USERNAME}}</h5>
+                                <p class='card-text'>{{member.FIRST_NAME}}</p>
+                                <p class='card-text'>{{member.LAST_NAME}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"> </div>
+            <div *ngIf="adding_result; else elseBlock">
+                <div class="alert " role="alert" id="success">
+                    <svg width="150px" height="150px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M17 6.5C17 9.53757 14.7614 12 12 12C9.23858 12 7 9.53757 7 6.5C7 3.46243 9.23858 1 12 1C14.7614 1 17 3.46243 17 6.5ZM9 6.5C9 8.32254 10.3431 9.8 12 9.8C13.6569 9.8 15 8.32254 15 6.5C15 4.67746 13.6569 3.2 12 3.2C10.3431 3.2 9 4.67746 9 6.5Z" fill="#6497b1"></path> <path d="M11.6759 14.9952C10.7868 14.9679 10.1945 14.8277 9.72609 14.6447C9.26355 14.464 8.89822 14.237 8.41685 13.9378C8.32296 13.8795 8.22448 13.8183 8.12019 13.7543C7.07587 13.1132 5.73464 13.2622 4.86415 14.1419C4.48443 14.5256 4.04036 15.0219 3.6849 15.5626C3.34603 16.0781 3 16.7638 3 17.5V20.0003C3 21.6574 4.34334 23 6 23H13.101C12.5151 22.4259 12.0297 21.7496 11.6736 21H6C5.44752 21 5 20.5524 5 20.0003V17.5C5 17.3549 5.08549 17.073 5.35613 16.6613C5.61017 16.2748 5.95358 15.8844 6.28579 15.5487C6.49412 15.3381 6.81106 15.2974 7.07389 15.4588C7.15661 15.5095 7.24087 15.5621 7.32694 15.6159C7.80938 15.9171 8.34918 16.254 8.99836 16.5076C9.58761 16.7378 10.2519 16.8974 11.0761 16.9645C11.1791 16.2695 11.3843 15.6078 11.6759 14.9952Z" fill="#6497b1"></path> <path d="M15.2929 17.7071C15.6834 17.3166 16.3166 17.3166 16.7071 17.7071L17.3483 18.3483L19.2473 16.4492C19.6379 16.0586 20.271 16.0586 20.6616 16.4492C21.0521 16.8397 21.0521 17.4729 20.6616 17.8634L18.1213 20.4036C18.0349 20.4901 17.9365 20.5574 17.8316 20.6056C17.4486 20.8294 16.9487 20.7771 16.6203 20.4487L15.2929 19.1213C14.9024 18.7308 14.9024 18.0976 15.2929 17.7071Z" fill="#6497b1"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M24 18C24 21.3137 21.3137 24 18 24C14.6863 24 12 21.3137 12 18C12 14.6863 14.6863 12 18 12C21.3137 12 24 14.6863 24 18ZM13.9819 18C13.9819 20.2191 15.7809 22.0181 18 22.0181C20.2191 22.0181 22.0181 20.2191 22.0181 18C22.0181 15.7809 20.2191 13.9819 18 13.9819C15.7809 13.9819 13.9819 15.7809 13.9819 18Z" fill="#6497b1"></path> </g></svg>
+                    <p>A new member is added successfully </p>
+                </div>
+            </div>
+            <ng-template #elseBlock>
+                <div class="alert " role="alert" id="fail">
+                    <svg width="150px" height="150px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M17 6.5C17 9.53757 14.7614 12 12 12C9.23858 12 7 9.53757 7 6.5C7 3.46243 9.23858 1 12 1C14.7614 1 17 3.46243 17 6.5ZM9 6.5C9 8.32254 10.3431 9.8 12 9.8C13.6569 9.8 15 8.32254 15 6.5C15 4.67746 13.6569 3.2 12 3.2C10.3431 3.2 9 4.67746 9 6.5Z" fill="#6497b1"></path> <path d="M11.6759 14.9952C10.7868 14.9679 10.1945 14.8277 9.72609 14.6447C9.26355 14.464 8.89822 14.237 8.41685 13.9378C8.32296 13.8795 8.22448 13.8183 8.12019 13.7543C7.07587 13.1132 5.73464 13.2622 4.86415 14.1419C4.48443 14.5256 4.04036 15.0219 3.6849 15.5626C3.34603 16.0781 3 16.7638 3 17.5V20.0003C3 21.6574 4.34334 23 6 23H13.101C12.5151 22.4259 12.0297 21.7496 11.6736 21H6C5.44752 21 5 20.5524 5 20.0003V17.5C5 17.3549 5.08549 17.073 5.35613 16.6613C5.61017 16.2748 5.95358 15.8844 6.28579 15.5487C6.49412 15.3381 6.81106 15.2974 7.07389 15.4588C7.15661 15.5095 7.24087 15.5621 7.32694 15.6159C7.80938 15.9171 8.34918 16.254 8.99836 16.5076C9.58761 16.7378 10.2519 16.8974 11.0761 16.9645C11.1791 16.2695 11.3843 15.6078 11.6759 14.9952Z" fill="#6497b1"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18 24C21.3137 24 24 21.3137 24 18C24 14.6863 21.3137 12 18 12C14.6863 12 12 14.6863 12 18C12 21.3137 14.6863 24 18 24ZM18 22.0181C15.7809 22.0181 13.9819 20.2191 13.9819 18C13.9819 17.2532 14.1857 16.5539 14.5406 15.9548L20.0452 21.4594C19.4461 21.8143 18.7468 22.0181 18 22.0181ZM21.4594 20.0452C21.8143 19.4461 22.0181 18.7468 22.0181 18C22.0181 15.7809 20.2191 13.9819 18 13.9819C17.2532 13.9819 16.5539 14.1857 15.9548 14.5406L21.4594 20.0452Z" fill="#6497b1"></path> </g></svg>
+                    <p>Sorry this member can not be added </p>
+                </div>
+            </ng-template>
+        </div>
+        <ng-template #elseBlock>
+            <svg viewBox="0 0 91 91" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#b3cde0;} </style> <g> <g> <path class="st0" d="M27.6,34.3c-2.2,2.3-4.2,4.8-5.5,7.5c-1.6,3.4,2.7,7.4,5.6,4.3c3.6-3.8,6.2-8.5,9.8-12.4 c1.5-1.6,1.1-3.9-0.7-5.1c-2.7-1.9-5.1-4.2-7.4-6.5c-1.7-1.8-3.3-4.8-6.1-4.8c-0.7,0-1.2,0.5-1.5,1.1c-1.1,2.7,1.9,5.9,3.4,7.9 c0.4,0.5,0.9,1,1.3,1.5c-0.9,0-1.9,0-2.7,0c-2.9,0-6.8-0.3-9.2,1.6c-1.1,0.8-1.3,2.5,0,3.2c2.5,1.5,5.8,1,8.6,1.2 C24.7,33.9,26.1,34.1,27.6,34.3z"></path> <path class="st0" d="M76.1,29.4c-2.4-1.8-6.3-1.5-9.2-1.6c-0.9,0-1.8,0-2.7,0c0.4-0.5,0.9-1,1.3-1.5c1.6-2,4.6-5.2,3.4-7.9 c-0.3-0.6-0.7-1.1-1.5-1.1c-2.8,0-4.3,3-6.1,4.8c-2.3,2.4-4.7,4.6-7.4,6.5c-1.7,1.2-2.2,3.5-0.7,5.1c3.6,3.9,6.2,8.6,9.8,12.4 c2.9,3.1,7.2-0.8,5.6-4.3c-1.3-2.6-3.3-5.1-5.5-7.5c1.5-0.2,2.9-0.4,4.3-0.5c2.8-0.2,6.1,0.3,8.6-1.2 C77.4,31.9,77.2,30.2,76.1,29.4z"></path> <path class="st0" d="M44.5,56c-5.6,0-11.3,1.7-16.1,4.6c-3.7,2.2-10.3,6.9-10.2,11.7c0,1,1,1.4,1.8,1c2.1-0.9,3.4-3.2,5-4.7 c1.7-1.6,3.6-3,5.6-4.2c4.2-2.4,9-3.7,13.8-3.6c4.7,0.1,9.2,1.5,13.1,3.9c4.3,2.6,6.9,6.1,9.7,10.1c2.1,3,6.5,0.5,4.9-2.9 C67.7,62.1,55.1,56,44.5,56z"></path> </g> </g> </g></svg>
+            <p>Please enter a valid  username!</p>
+        </ng-template>
+    
