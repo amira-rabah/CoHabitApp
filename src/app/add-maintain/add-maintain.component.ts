@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpErrorResponse} from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Maintain } from '../Maintain';
+import { AddMaintainService } from './add-maintain.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-add-maintain',
@@ -9,16 +12,31 @@ import { Maintain } from '../Maintain';
 })
 export class AddMaintainComponent {
 
-  maintain: Maintain= {
-    ID_MAINTAIN :0,
-    MAINTAIN_NAME :'',
-    DESCRIPTION :'',
-    FINISHED : false,
-    COST : 0,
-    MAINTAIN_DATE : new Date() ,
-    ID_USER : 0};
+  maintain: Maintain |any = {
+    MAINTAIN_NAME: '',
+    COST: '',
+    DESCRIPTION: '',
+    FINISHED: false 
+  };
   
-  constructor(private http:HttpClient){}
-  
-  AddMaintain(){}
+
+  constructor (public addmaintain : AddMaintainService) {}
+  AddMaintain(form : NgForm) : void{
+    if (form.valid){
+      console.log(this.maintain);
+      this.addmaintain.sendMaintain(this.maintain).subscribe(
+        response => {
+          console.log(response);
+          alert("Addet successfully !");
+        },
+        error => {
+          console.log(error);
+          alert("This maintain can not be added  ");
+        }
+      )
+    }
+    else{
+      alert ("Please fill in all the details");
+    }
+  }
 }

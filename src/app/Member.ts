@@ -1,7 +1,7 @@
 export interface Member{
     FIRST_NAME: string,
     ID_USER : number,
-    IAMGE :string,
+    IMAGE :string,
     LAST_NAME :string,
     USERNAME :string
 }

@@ -59,3 +59,4 @@ if (isset($_GET['username'])) {
 } else {
     echo ("write the username please ");
 }
+?>
