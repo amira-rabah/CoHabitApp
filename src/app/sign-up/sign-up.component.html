@@ -1,0 +1,113 @@
+<div class="container">
+    <br><br>
+    <section class="h-100 h-custom gradient-custom-2">
+        <form class="form needs-validation" novalidate #formRef="ngForm"  method="post">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card first-part" style="border-radius: 15px;">
+                    <div class="card-body p">
+                        <div class="row ">
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5" style="color: #005b96;">Personal Informations </h3>
+    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div  class="form-floating ">
+                                                <input name="FIRST_NAME" type="text" id="First_name" class="form-control " [(ngModel)]="Info.FIRST_NAME" required />
+                                                <label class="" for="First_name">First name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div  class="form-floating ">
+                                                <input name="LAST_NAME" type="text" id="last_name" class="form-control " [(ngModel)]="Info.LAST_NAME"  required/>
+                                                <label class="" for="last_name">Last name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="mb-4 pb-2">
+                                        <div  class="form-floating ">
+                                            <input name="PHONE" type="number" id="Phone_number" class="form-control " [(ngModel)]="Info.PHONE" required pattern="[0-9]{8}" />
+                                            <label class="form-label" for="Phone_number">Phone number</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="mb-4 pb-2">
+                                        <div  class="form-floating ">
+                                            <input name="DATE_OF_BIRTH" type="date" id="date_of_birth" class="form-control " [(ngModel)]="Info.DATE_OF_BIRTH" />
+                                            <label class="form-label" for="date_of_birth">Date of birth</label>
+                                        </div>
+                                    </div>
+                                    <label > Gender </label>
+                                    <div class="form-check">
+                                        <input  class="form-check-input " type="radio" name="GENDER" id="F" value="F" [(ngModel)]="Info.GENDER"  checked>
+                                        <label class="form-check-label" for="F">
+                                        Female
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input  class="form-check-input " type="radio" name="GENDER" id="M" [(ngModel)]="Info.GENDER" value="M">
+                                        <label class="form-check-label" for="M">
+                                        Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input  class="form-check-input " type="radio" name="GENDER" id="U" value="U" disabled>
+                                        <label class="form-check-label" for="U">
+                                        Prefer not to say
+                                        </label>
+                                    </div>
+                        
+    
+                                </div>
+                            </div>
+                            <div class="col-lg-6 card bg-indigo text-white">
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5">Account Details</h3>
+            
+                                <div class="mb-4 pb-2">
+                                    <div  class="form-floating  form-white">
+                                        <input name="USERNAME" type="text" id="Username" class="form-control " [(ngModel)]="Info.USERNAME" required />
+                                        <label class="form-label" for="Username">Username</label>
+                                    </div>
+                                </div>
+            
+                                <div class="mb-4 pb-2">
+                                    <div  class="form-floating  form-white">
+                                        <input name="EMAIL" type="text" id="Email" class="form-control " [(ngModel)]="Info.EMAIL" required/>
+                                        <label class="form-label" for="Email">Email</label>
+                                    </div>
+                                </div>
+            
+                                <div class="mb-4 pb-2">
+                                    <div  class="form-floating  form-white">
+                                        <input name="PWD" type="text" id="pwd" class="form-control " [(ngModel)]="Info.PWD" />
+                                        <label class="form-label" for="pwd">Password</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4 pb-2">
+                                    <div  class="form-floating  form-white">
+                                        <input name="CONFIRM_PWD" type="text" id="form3Examplea5" class="form-control " [(ngModel)]="Info.CONFIRM_PWD" />
+                                        <label class="form-label" for="form3Examplea5">Confirm Password</label>
+                                    </div>
+                                </div>
+            
+                                <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                                    <input name="ADMIN" class="form-check-input me-3" type="checkbox"  id="admin" [(ngModel)]="Info.ADMIN"/>
+                                    <label class="form-check-label text-white" for="admin">Are you a groupe admin </label>
+                                </div>
+            
+                                <button (click)="addNewUser(formRef)" class="btn btn-light btn-lg" >Register</button>
+            
+                            </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </form>
+    </section>
+</div>

@@ -10,7 +10,7 @@ export class AddMemberService {
 
   constructor(private http: HttpClient) { }
 
-  getMember(username : string): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost/AddMember.php?username=' + username );
+  getMember(username : string, idSpace:String): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost/AddMember.php?username=' + username +"&idSpace="+idSpace);
   }
 }

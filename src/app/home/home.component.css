@@ -1,0 +1,70 @@
+ #img{
+    /* Set the background image */
+    background-image: url('./pexels-tirachard-kumtanom-112571-887820.jpg');
+    /* Set background size to cover the entire container */
+    background-size: cover;
+    /* Center the background image */
+    background-position: center;
+    /* Optional: Add a background color in case the image is not available or doesn't cover the entire container */
+    background-color: #f0f0f0;
+    /* Set the height of the container */
+    height: 100vh; /* 100% of viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+html, body{
+  height: 100%;
+  font-weight: 800;
+}
+
+
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: #4D163D;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: #005b96;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: #6497b1;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: #6497b1;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: #b3cde0;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
+}

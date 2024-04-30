@@ -1,0 +1,51 @@
+<nav>
+    <ul>
+    <li *ngIf="isConnected"><a routerLink="/home">Home</a></li>
+    <li *ngIf="isConnected && currentUser.manager==true">
+        <a routerLink="**"> Manage members </a>
+        <ul class="dropdown">
+            <li><a routerLink="add-member">Add member</a></li>
+            <li><a routerLink="view-members">View space members</a></li>
+        </ul>
+    </li>
+    <li *ngIf="isConnected">
+        <a routerLink="/"> Manage services </a>
+        <ul class="dropdown">
+            <li><a routerLink="/add-bill">Add bill</a></li>
+            <li><a routerLink="/view-bill">View bill</a></li>
+            <li><a routerLink="/add-maintain">Add maintain</a></li>
+            <li><a routerLink="/view-maintain">View maintain</a></li>
+            <li><a routerLink="/add-product">Add product</a></li>
+            <li><a routerLink="/products">View product</a></li>
+        </ul>
+    </li>
+    <li *ngIf="isConnected"><a routerLink="/to-pay">Amount to pay</a></li>
+    <li><a routerLink="">About Us</a></li>
+    
+    <button type="button" class="btn " *ngIf="isConnected" (click)="logout()">LogOut</button>
+    </ul>
+</nav>
+<!-- 
+    *home
+    *member managment
+        **add-member
+        **view space -members
+    *manage services
+        **bills
+            ***add 
+            ***view
+                ****edit
+                ****delete
+        **maintains
+            ***add 
+            ***view
+                ****edit
+                ****delete
+        **products
+            ***add 
+            ***view
+                ****edit
+                ****delete
+    *amount to pay
+
+ -->

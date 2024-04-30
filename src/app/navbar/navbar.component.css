@@ -1,0 +1,50 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald';
+}
+
+
+ul {
+    list-style: none;
+    background: #b3cde0;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: #011f4b;
+    text-decoration: none;
+    text-align: end;
+    font-size: medium;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #b3cde0;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover {
+    background: #b3cde0;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+button{
+    align-self:end;
+    color: rgb(107, 3, 3);
+}

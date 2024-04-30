@@ -1,0 +1,27 @@
+.badge{
+    background-color:#b3cde0;
+    color :#F9F6EE;
+    font-size : 1.5rem;
+}
+
+
+#Name{
+    color: #F9F6EE;
+    
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.badge{
+    font-weight: normal;
+}
+.data{
+    color: #FCF5E5;
+    font-size: 1.0rem;
+    padding-left: 10px;
+    padding-top :4px
+}
+.row{
+    margin: 20px;
+}

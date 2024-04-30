@@ -1,0 +1,19 @@
+form{
+    font-size: medium;
+    text-align: end;
+}
+.form-check{
+    align-items: justify;
+    
+}
+button{
+    background-color:#6497b1 ;
+    color : #b3cde0
+}
+label , p{
+    color: #283655;
+}
+.check {
+    display: flex;
+    margin : 15px;
+}

@@ -6,10 +6,11 @@ session_start();
 
 require_once("connexion.php");
 //$statment_admin_space = $connexion->query($select_req_admin_space);
-$statment_admin_space = 100;
 
-if (isset($_GET['username'])) {
+
+if (isset($_GET['username'])&& isset($_GET['idSpace'])) {
     $username = $_GET['username'];
+    $statment_admin_space = $_GET['idSpace'];
     $select_req = "SELECT `USER`.IMAGE, ACCOUNT.USERNAME, `USER`.FIRST_NAME, `USER`.LAST_NAME, `USER`.ID_USER 
                 FROM ACCOUNT, `USER` 
                 WHERE `USER`.ID_USER = ACCOUNT.ID_USER 

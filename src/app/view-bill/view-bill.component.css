@@ -1,0 +1,31 @@
+table{
+    font-size: 1rem;
+    background: transparent;
+    
+}
+
+th{
+    text-decoration: underline;
+    background: transparent;
+    color: #b3cde0;
+}
+tr{
+    align-items:center;
+}
+td{
+    background: transparent;
+    color : #6497b1
+}
+a{
+    color: inherit;
+}
+button{
+    background-color: #6497b1;
+    color:#011f4b;
+}
+h2{
+    color : #b3cde0;
+}
+#head{
+    padding:100px ;
+}

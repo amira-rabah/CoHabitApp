@@ -1,0 +1,13 @@
+<div class="container">
+    <br><br>
+    <div *ngIf="pays.length > 0" class="amounts-container">
+        <h2 class="title">Amounts to Pay:</h2>
+        <ul class="user-list">
+            <li *ngFor="let userAmount of pays" class="user-item">
+                <span class="user-name">{{ userAmount.user_id }}</span>
+                <span class="separator"> - </span>
+                <span class="amount-to-pay">{{ userAmount.total_amount_to_pay }}</span>
+            </li>
+        </ul>
+    </div>
+</div>  

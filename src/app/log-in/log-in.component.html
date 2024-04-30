@@ -1,0 +1,38 @@
+
+	<div class="row" id="home">
+		<div class="col-md" id="text">
+			<br><br>
+			<br><br>
+			<br><br><br>
+			<svg viewBox="0 0 960 300">
+				<symbol id="s-text">
+				  <text text-anchor="middle" x="50%" y="80%">CoHabit</text>
+				  <text text-anchor="middle" x="52%" y="80%">CoHabit</text>
+				  
+				</symbol>
+			  
+				<g class = "g-ants">
+				  <use xlink:href="#s-text" class="text-copy"></use>
+				  <use xlink:href="#s-text" class="text-copy"></use>
+				  <use xlink:href="#s-text" class="text-copy"></use>
+				  <use xlink:href="#s-text" class="text-copy"></use>
+				  <use xlink:href="#s-text" class="text-copy"></use>
+				</g>
+			  </svg>
+		</div>
+		<div class="col-md "  >
+			<br><br>
+			<br><br>
+			<div class="login">
+				<form class="needs-validation" #formRef="ngForm" (submit)="onLogIn(formRef)">
+					<label for="chk" aria-hidden="true">Log In </label>
+					<input type="text" name="USERNAME" placeholder="User name" [(ngModel)]="loginObj.USERNAME"  required>
+					<input type="password" name="PWD" placeholder="Password" [(ngModel)]="loginObj.PWD" required>
+					<button>LogIn</button>
+					<button><a routerLink="/sign-up">SignUp</a></button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+

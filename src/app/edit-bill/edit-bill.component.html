@@ -1,0 +1,80 @@
+<div class="container">
+<div class="row" id="head">
+    <div class="col-md-3">
+        <svg fill="#b3cde0" width="151px" height="151px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g data-name="32. Clipboard" id="_32._Clipboard"> <path d="M25,2H22a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2H7A3,3,0,0,0,4,5V29a3,3,0,0,0,3,3H25a3,3,0,0,0,3-3V5A3,3,0,0,0,25,2ZM12,2h8V3h0V4H12ZM26,29a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h3a2,2,0,0,0,2,2h8a2,2,0,0,0,2-2h3a1,1,0,0,1,1,1Z"></path> <path d="M15,19a1,1,0,0,0,2,0v-.18A3,3,0,0,0,16,13a1,1,0,0,1,0-2h2a1,1,0,0,0,0-2H17a1,1,0,0,0-2,0v.18A3,3,0,0,0,16,15a1,1,0,0,1,0,2H14a1,1,0,0,0,0,2Z"></path> <path d="M11,22H9a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z"></path> <path d="M23,22H15a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2Z"></path> <path d="M11,26H9a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z"></path> <path d="M23,26H15a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2Z"></path> </g> </g></svg>    
+    </div>
+    <div class="col-md">
+        <br><h2>Update a bill</h2>
+    </div>
+</div>
+<br>
+<form class="needs-validation update-form-container" [formGroup]="updateForm" (ngSubmit)="UpdateBill()">
+
+    <div class="row">
+        <div class="col-md-3">
+            <label for="bill_num"> bill num: </label>
+        </div>
+        <div class="col">
+            <input type="text" name="bill_num" id="bill_num" class="form-control" formControlName="BILL_NUM" readonly>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="bill_amount"> Bill amount: </label>
+        </div>
+        <div class="col">
+            <input type="text" name="bill_amount" id="bill_amount" class="form-control" formControlName="AMOUNT" >
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>bill status:</p>
+        </div>
+        <div class="col form-check form-switch">
+            <input type="checkbox" name="bill_status" id="bill_status" class="form-check-input" role="switch" formControlName="PAYED">
+            <label for="bill_status" class="form-check-label" id="bill_status_label">Payed</label>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="bill_deadline"> bill description: </label>
+        </div>
+        <div class="col">
+            <input type="date" name="bill_deadline" id="bill_deadline" class="form-control" formControlName="DEADLINE" >
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="bill_type"> Bill type: </label>
+        </div>
+        <div class="col" *ngIf="billTypes" id="bill_type">
+            <select class="form-select form-select-lg mb-3" name="ID_TYPE" required formControlName="ID_TYPE">
+                <option value="{{type.ID_TYPE_BILL}}"  *ngFor="let type of billTypes">{{type.BILL_TYPE_NAME}}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="bill_description"> Bill description: </label>
+        </div>
+        <div class="col">
+            <textarea name="bill_description" id="bill_description" class="form-control" formControlName="DESCRIPTION" cols="30" rows="10" ></textarea>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col d-grid">
+            <button type="submit" class="btn btn-block ">Aply changes </button>
+        </div>
+        <div class="col d-grid">
+            <button type="reset" class="btn btn-block">Reset</button>
+        </div>
+    </div>
+</form>
+</div>

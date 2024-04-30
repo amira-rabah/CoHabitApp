@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 export class ViewMaintainService {
 
   constructor(private http : HttpClient) { }
-  getMaintains(): Observable <any[]>  {
-    return this.http.get<any[]>('http://localhost/selectMaintains.php');
+  
+  getMaintains(idSpace : string): Observable <any[]>  {
+    return this.http.get<any[]>('http://localhost/selectMaintains.php?idSpace='+idSpace);
   }
 }
