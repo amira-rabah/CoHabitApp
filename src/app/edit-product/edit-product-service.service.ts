@@ -9,13 +9,13 @@ import { Products } from '../Product';
 export class EditProductServiceService {
 
   constructor(private http: HttpClient) { }
-  getProductById(id:number): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost/edit-product/editProductGET.php?idProduct=${id}`);
+  getProductById(id:number): Observable<any> {
+    return this.http.get<any>(`http://localhost/editProductGET.php?idProduct=${id}`);
   }
 
-  updateProduct(product: Products): Observable<any> {
+  updateProduct(product: Products |any): Observable<any> {
     console.log(product);
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put<any>('http://localhost/edit-product/editProductUpdate.php', product, { headers });
+    //const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.put('http://localhost/editProductUpdate.php', product);
   }
 }

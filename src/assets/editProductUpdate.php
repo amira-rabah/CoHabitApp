@@ -31,22 +31,15 @@ if ($_SERVER["REQUEST_METHOD"] == "PUT") {
     $lastName = $data['LAST_NAME'];
     $date = $data['date'];
 
-    // Perform the update query
     $req = "UPDATE product SET PRODUCT_NAME='$productName', PRICE='$productPrice',PERSONAL_USE='$personalUse',ID_TYPE='$type',qte='$qte' WHERE ID_PRODUCT=$productId";
 
-    // Execute the query
     $result = $connexion->query($req);
 
-    // Check for errors or success
     if ($result) {
         echo json_encode(array("message" => "Product updated successfully"));
     } else {
         echo json_encode(array("message" => "Error updating product"));
     }
-}else {
-    // Return error message for invalid request method
+} else {
     echo json_encode(["error" => "Invalid request method. Only UPDATE method is allowed."]);
 }
-
-
-?>

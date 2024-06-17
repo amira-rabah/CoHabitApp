@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
 
     $data = json_decode(file_get_contents("php://input"), true);
 
-    // Check if all required fields are present in the JSON data
+
     if (isset($data['BILL_NUM'], $data['DESCRIPTION'], $data['AMOUNT'], $data['DEADLINE'], $data['PAYED'], $data['ID_TYPE'])) {
 
         $update_query = $connexion->prepare("UPDATE  BILL
@@ -28,18 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
 
         if ($update_query->execute()) {
             $response = array("message" => "updated successfully.");
-            http_response_code(201); // OK
         } else {
             $response = array("error" => "Failed to update data.");
-            http_response_code(202); // Internal Server Error
         }
     } else {
         $response = array("error" => "Missing required fields.");
-        http_response_code(203); // Bad Request
     }
 } else {
     $response = array("error" => "Invalid request method.");
-    http_response_code(204); // Method Not Allowed
 }
 
 echo (json_encode($response));

@@ -53,7 +53,5 @@ export class SignUpComponent {
       alert ("Please fill in all the details");
     }
   }
-   test() {
-    alert("hi")
-  }
+   
 }

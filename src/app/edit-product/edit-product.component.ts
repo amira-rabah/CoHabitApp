@@ -23,6 +23,7 @@ export class EditProductComponent implements OnInit {
       this.editProductService.getProductById(this.productId).subscribe(
         (data ) => {
           this.product = data;
+          console.log(this.product[0]);
         },
         (error) => {
           console.error(error);
@@ -33,9 +34,9 @@ export class EditProductComponent implements OnInit {
 
   updateProduct() {
     console.log(this.product);
-    this.editProductService.updateProduct(this.product).subscribe(
+    this.editProductService.updateProduct(this.product[0]).subscribe(
       (response) => {
-        
+        alert("Product updated successfully")
         console.log("Product updated successfully", response);
       },
       (error) => {
